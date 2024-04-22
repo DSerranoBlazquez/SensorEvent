@@ -5,6 +5,6 @@ import com.microservice.model.SensorEvent;
 
 public interface SensorEventService {
 
-    public void processSensorEvent(SensorEvent sensorEvent);
+    public void createSensorEvent(SensorEvent sensorEvent);
 
 }

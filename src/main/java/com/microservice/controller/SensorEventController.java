@@ -22,7 +22,7 @@ public class SensorEventController {
     @PostMapping("/create")
     public ResponseEntity<String> createSensorEvent(@RequestBody SensorEvent sensorEvent) {
 
-        sensorEventService.processSensorEvent(sensorEvent);
+        sensorEventService.createSensorEvent(sensorEvent);
         return new ResponseEntity<>("Se ha creado un registro correctamente en la coleccion sensor_events", HttpStatus.CREATED);
     }
 }

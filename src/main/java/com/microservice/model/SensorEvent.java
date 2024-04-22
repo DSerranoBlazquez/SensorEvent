@@ -13,7 +13,10 @@ public class SensorEvent {
     private Date timestamp;
     private String type;
     private double value;
-	public String getId() {
+	
+    // Getters setters
+
+    public String getId() {
 		return id;
 	}
 	public void setId(String id) {
@@ -44,5 +47,4 @@ public class SensorEvent {
 		this.value = value;
 	}
 
-    // Constructors, getters, and setters
 }

@@ -12,8 +12,8 @@ public class SensorEventServiceImpl implements SensorEventService {
 	@Autowired
     private SensorEventRepository sensorEventRepository;
 
-    public void processSensorEvent(SensorEvent sensorEvent) {
-        // Save the sensor event to MongoDB collection
-        sensorEventRepository.save(sensorEvent);
+    public void createSensorEvent(SensorEvent sensorEvent) {
+
+    	sensorEventRepository.save(sensorEvent);
     }
 }
