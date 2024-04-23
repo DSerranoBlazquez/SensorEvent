@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.microservice.kafka.KafkaEventProducer;
 import com.microservice.model.SensorEvent;
 import com.microservice.service.SensorEventService;
 import com.microservice.service.SensorEventServiceImpl;
@@ -18,11 +19,15 @@ public class SensorEventController {
 
     @Autowired
     private SensorEventServiceImpl sensorEventService;
+    @Autowired
+    private KafkaEventProducer kafkaEventProducer;
 
     @PostMapping("/create")
     public ResponseEntity<String> createSensorEvent(@RequestBody SensorEvent sensorEvent) {
 
         sensorEventService.createSensorEvent(sensorEvent);
+        kafkaEventProducer.sendEvent("Se ha creado un registro del sensor: " + sensorEvent.getSensorId() +" de temperatura: " + sensorEvent.getValue());
+
         return new ResponseEntity<>("Se ha creado un registro correctamente en la coleccion sensor_events", HttpStatus.CREATED);
     }
 }

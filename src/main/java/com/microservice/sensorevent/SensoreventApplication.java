@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.microservice.service","com.microservice.controller", "com.microservice.model"})
+@ComponentScan(basePackages = {"com.microservice.service","com.microservice.controller", "com.microservice.model", "com.microservice.kafka"})
 @EnableMongoRepositories(basePackages = "com.microservice.repository")
 public class SensoreventApplication {
 
